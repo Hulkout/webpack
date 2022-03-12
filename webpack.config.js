@@ -14,16 +14,9 @@ module.exports = {
     mode: 'development',
     module: {
         rules: [
+            ...base.module.rules,
             {test: /\.css$/i,
-                use: ['style-loader', "css-loader", {
-                    loader: "sass-loader",
-                    options: {
-                        implementation: require("sass"),
-                        sassOptions: {
-                            fiber: false,
-                        },
-                    },
-                },],}
+                use: ['style-loader', "css-loader"]}
         ],
     },
 
